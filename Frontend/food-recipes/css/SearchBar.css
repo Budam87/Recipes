@@ -1,0 +1,36 @@
+.search-bar  i {
+    color: black;
+    font-size: 25px;
+    margin: 0;
+}
+
+
+input {
+    height: 36px;
+    width: 96%;
+}
+
+.search-bar {
+    width: 30%;
+}
+
+.search-bar {
+    position: relative;
+    display: inline-block;
+}
+
+.search-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: white;
+    border: solid 1px gray;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.search-btn:hover {
+    color: gray;
+    cursor: pointer;
+}

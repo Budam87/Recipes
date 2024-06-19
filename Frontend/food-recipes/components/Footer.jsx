@@ -1,0 +1,65 @@
+import "../css/Footer.css";
+import subscribe from "../assets/subscribe.jpg";
+import { Button } from "./Button";
+
+export function Footer() {
+  return (
+    <footer className="footer">
+      <div className="content-wrapper">
+        <div className="left-content">
+          <div className="sub-image">
+            <img src={subscribe} alt="recipes" />
+          </div>
+          <div className="subscribe">
+            <h3>WANT MORE RECIPES FROM BUDDAH?</h3>
+            <p>
+              Sign up for FREE quick and easy weeknight dinners delivered right
+              to your inbox! You'll receive new recipes as soon as they are
+              published, plus our top 12 recipes free!
+            </p>
+            <div className="form">
+              <input type="email" placeholder="email address" />
+              <Button text="SUBSCRIBE" className="footer-btn"/>
+            </div>
+          </div>
+        </div>
+        <div className="right-content">
+            <div className="nav-wrapper">
+              <div className="nav-bar">
+                <h4>QUICK LINKS</h4>
+                <ul>
+                  <a href=""><li>ABOUT</li></a>
+                  <a href=""><li>HOME</li></a>
+                </ul>
+              </div>
+              <div className="nav-bar">
+                <h4>FOLLOW</h4>
+                <ul>
+                  <a href=""><li>RECIPES</li></a>
+                  <a href=""><li>VIDEOS</li></a>
+                </ul>
+              </div>
+              <div className="nav-bar">
+                <h4>FOLLOW</h4>
+                <ul>
+                  <a href=""><li>FACEBOOK</li></a>
+                  <a href=""><li>YOUTUBE</li></a>
+                  <a href=""><li>INSTAGRAM</li></a>
+                  <a href=""><li>TWITTER</li></a>
+                </ul>
+              </div>
+            </div>
+            <div className="all-rights">
+                <p>&copy; 2024 Foodie Buddah. All Rights Reserved.</p>
+                <ul>
+                    <a href=""><li>TOP</li></a>
+                    <a href=""><li>HOME</li></a>
+                    <a href=""><li>BROWSE RECIPES</li></a>
+                    <a href=""><li>VIDEOS</li></a>
+                </ul>
+            </div>
+          </div>
+      </div>
+    </footer>
+  );
+}

@@ -1,0 +1,22 @@
+.btn {
+    display: flex;
+    border: 1px solid black;
+    padding: 10px;
+    font-weight: 700;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: gray;
+    cursor: pointer;
+}
+
+
+.btn i {
+    color: black;
+    font-size: 15px;
+    
+}

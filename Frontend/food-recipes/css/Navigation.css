@@ -1,0 +1,58 @@
+.navbar {
+    width: 80%;
+    display: flex;
+    padding-top: 20px;
+    margin:auto;
+    align-items: center;
+}
+
+.upper-div {
+    display: flex;
+    align-items:  center;
+    justify-content: end;
+}
+
+.lower-div {
+    display: flex;
+    justify-content: end;
+}
+
+.right-block {
+    width: 70%;
+}
+
+.navbar img {
+    width: 30%;
+}
+
+li {
+    display: inline-block;
+    padding-left: 25px;
+    font-size: x-large;
+}
+
+li:hover {
+    color: gray;
+}
+
+input::placeholder {
+    font-style: italic;
+}
+
+i {
+    margin-right: 10px;
+    font-size: 36px;
+    color: #f1592a;
+    transition: color 0.3s ease;
+}
+
+i:hover {
+    color: rgba(241, 89, 42, 0.5);
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
