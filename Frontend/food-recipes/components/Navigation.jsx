@@ -18,10 +18,10 @@ export function Navigation() {
             </div>
                 <div className='lower-div'>
                     <ul>
-                        <li>HOME</li>
-                        <li>BROWSE RECIPES</li>
-                        <li>VIDEOS</li>
-                        <li>ABOUT</li>
+                        <li><Link to="/">HOME</Link></li>
+                        <li><Link to="/recipes">BROWSE RECIPES</Link></li>
+                        <li><Link to="/videos">VIDEOS</Link></li>
+                        <li><Link to="/about">ABOUT</Link></li>
                     </ul>
                 </div>
             </div>

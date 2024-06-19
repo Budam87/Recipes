@@ -2,6 +2,10 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import { Navigation } from '../components/Navigation'
 import { Footer } from '../components/Footer'
+import {Home} from '../pages/Home';
+import {Videos} from '../pages/Videos';
+import { Recipes } from '../pages/Recipes';
+import { About } from '../pages/About';
 
 function App() {
   
@@ -10,9 +14,10 @@ function App() {
       <div>
         <Navigation />
         <Routes>
-          {/* <Route path="/videos" element={<Videos/>} />
+          <Route path="/" element={<Home/>} />
+          <Route path="/videos" element={<Videos/>} />
           <Route path="/recipes" element={<Recipes/>} />
-          <Route path='/about' element={<About/>}/> */}
+          <Route path='/about' element={<About/>}/>
         </Routes>
         <Footer />
       </div>
