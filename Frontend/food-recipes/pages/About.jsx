@@ -2,6 +2,7 @@ import "../css/About.css";
 import about from "../assets/cupcake.jpg";
 import pan from "../assets/pan.webp";
 import cookingcoding from "../assets/cookingcoding.jpg";
+import { Comments } from "../components/Comments";
 
 export function About() {
   return (
@@ -38,6 +39,7 @@ export function About() {
           enough motivation and stubbornness to continue this way, because it is
           really interesting. :)
         </p>
+        <Comments />
       </div>
     </div>
   );
