@@ -32,3 +32,21 @@ app.get("/recipes", async (req, res) => {
     res.status(500).send({ error: 'Klaida gaudant receptus' });
   }
 });
+
+app.post('/comments', async (req, res) => {
+  const {comment, name, email} = req.body;
+
+  if(!comment || !name || !email) {
+    return res.status(400).send({error: 'All fields are required'});
+  }
+
+  try {
+    const collection = db.collection('Comments');
+    const newComment = {comment, name, email, createdAt: new Date()};
+    await collection.insertOne(newComment);
+    res.status(201).send('Comment posted');
+  } catch (e) {
+    console.error(e);
+    res.status(500).send('Posting failed');
+  }
+})
