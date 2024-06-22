@@ -6,6 +6,7 @@ import {Home} from '../pages/Home';
 import {Videos} from '../pages/Videos';
 import { Recipes } from '../pages/Recipes';
 import { About } from '../pages/About';
+import { Recipe } from '../pages/Recipe';
 
 function App() {
   
@@ -18,6 +19,7 @@ function App() {
           <Route path="/videos" element={<Videos/>} />
           <Route path="/recipes" element={<Recipes/>} />
           <Route path='/about' element={<About/>}/>
+          <Route path="/recipe/:id" element={<Recipe />} />
         </Routes>
         <Footer />
       </div>

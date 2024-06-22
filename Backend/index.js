@@ -4,7 +4,8 @@ const cors = require('cors');
 app.use(cors());
 app.use(express.json());
 
-const { MongoClient } = require('mongodb');
+
+const { MongoClient, ObjectId } = require('mongodb');
 const dbString ='mongodb+srv://budamindaugas:budulis87@cluster0.jphecra.mongodb.net';
 const client = new MongoClient(dbString);
 
@@ -32,6 +33,21 @@ app.get("/recipes", async (req, res) => {
     res.status(500).send({ error: 'Klaida gaudant receptus' });
   }
 });
+
+app.get("/recipes/:id", async (req, res) => {
+  try {
+    let collection = db.collection("Recipes");
+    let recipe = await collection.findOne({ _id: new ObjectId(req.params.id) });
+    if (recipe) {
+      res.status(200).send(recipe);
+    } else {
+      res.status(404).send({ error: 'Receptas nerastas' });
+    }
+  } catch (e) {
+    console.error(e);
+    res.status(500).send({ error: 'Klaida gaudant receptą' });
+  }
+});ss
 
 app.get("/comments", async (req, res) => {
   try {

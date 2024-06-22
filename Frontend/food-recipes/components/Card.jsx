@@ -1,7 +1,8 @@
-import { Button } from "./Button"
-import '../css/Card.css'
+import { Button } from "./Button";
+import { Link } from "react-router-dom";
+import '../css/Card.css';
 
-export function Card({ photoUrl, title, text }) {
+export function Card({ photoUrl, title, text, id }) {
     return (
         <div className="card">
            <div className="card-content">
@@ -13,7 +14,9 @@ export function Card({ photoUrl, title, text }) {
                 </div>
             </div> 
             <div className="card-button">
-                <Button text='READ MORE'/>
+                <Link to={`/recipe/${id}`}>
+                    <Button text='READ MORE'/>
+                </Link>
             </div>
         </div>
     )

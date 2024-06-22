@@ -62,7 +62,9 @@ export function Home() {
                     <Card 
                         key={recipe._id}
                         photoUrl={recipe.photoUrl}
-                        title={recipe.title}/>
+                        title={recipe.title}
+                        id={recipe._id}/>
+                        
                 ))}
             </div>
 
@@ -75,6 +77,7 @@ export function Home() {
                         key={recipe._id}
                         photoUrl={recipe.photoUrl}
                         title={recipe.title}
+                        id={recipe._id}
                     />
                 ))}
             </div>
@@ -88,6 +91,7 @@ export function Home() {
                         key={recipe._id}
                         photoUrl={recipe.photoUrl}
                         title={recipe.title}
+                        id={recipe._id}
                     />
                 ))}
             </div>

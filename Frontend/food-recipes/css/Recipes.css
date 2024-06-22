@@ -1,0 +1,12 @@
+.recipes-wrapper {
+    width: 80%;
+    margin: auto;
+}
+
+.recipes-wrapper h1 {
+    text-align: left;
+}
+
+.recipes-search-bar {
+    width: 50%;
+}
