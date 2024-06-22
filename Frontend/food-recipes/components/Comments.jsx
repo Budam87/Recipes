@@ -6,6 +6,8 @@ export function Comments() {
     const [comment, setComment] = useState('');
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [comments, setComments] = useState([]);
+    const [error, setError] = useState(null);
 
     const handleSubmit = async (e) => {
         e.preventDefault;
@@ -29,6 +31,24 @@ export function Comments() {
         
     };
 
+    const fetchComments = async() => {
+        try {
+            const response = await fetch(`http://localhost:8080/comments`);
+            if (response.ok) {
+                const data = await response.json();
+                setComments(data);
+            } else {
+                setError(`Error: ${response.status} ${response.statusText}`);
+            }
+        } catch (error) {
+            setError(`Error: ${error.message}`);
+        }
+    };
+
+    useEffect(() => {
+        fetchComments();
+    }, []);
+
     return (
         <div className="comments">
             <h2>LEAVE A REPLY</h2>
@@ -41,6 +61,14 @@ export function Comments() {
                 <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                 <Button text="POST COMMENT" className="comments-btn" type='submit'/>
             </form>
+            <div className='comments-list'>
+                {comments.map((comment) => (
+                    <div key={comment._id} className='comment'>
+                        <p>{comment.name} <span> - {comment.createdAt}</span></p>
+                        <p>{comment.comment}</p>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }

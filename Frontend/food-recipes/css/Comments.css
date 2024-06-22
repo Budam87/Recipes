@@ -14,3 +14,23 @@ input {
     width: 30%;
     margin-top: 30px;
 }
+
+.comment {
+    border-top: 0.5px solid gray;
+    margin-top: 30px;
+}
+
+span {
+    color: #686196;
+    font-size: 11px;
+}
+
+.comment p:first-child {
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+
+
+
+

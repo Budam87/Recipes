@@ -33,6 +33,17 @@ app.get("/recipes", async (req, res) => {
   }
 });
 
+app.get("/comments", async (req, res) => {
+  try {
+    let collection = db.collection("Comments");
+    let results = await collection.find({}).toArray();
+    res.status(200).send(results);
+  } catch (e) {
+    console.error(e);
+    res.status(500).send({ error: 'Klaida gaudant komentus' });
+  }
+});
+
 app.post('/comments', async (req, res) => {
   const {comment, name, email} = req.body;
 
