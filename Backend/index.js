@@ -47,7 +47,7 @@ app.get("/recipes/:id", async (req, res) => {
     console.error(e);
     res.status(500).send({ error: 'Klaida gaudant receptą' });
   }
-});ss
+});
 
 app.get("/comments", async (req, res) => {
   try {

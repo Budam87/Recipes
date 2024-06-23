@@ -1,4 +1,41 @@
-.recipes-wrapper {
+.recipe-wrapper {
+    display: flex;
     width: 80%;
     margin: auto;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.main-info {
+    width: 60%;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.main-info p {
+    color: black;
+    text-align: justify;
+}
+
+.main-info img {
+    width: 100%;
+}
+
+.ingredients {
+    width: 35%;
+    border: solid 1px gray;
+    margin-top: 10%;
+}
+
+.ingredients ul {
+    padding: 0px 40px;
+    
+}
+
+.ingredients ul li {
+    margin-bottom: 10px; 
+}
+
+.ingredients h2 {
+    padding: 0px 40px;
 }
