@@ -1,5 +1,5 @@
 import {Divider} from '../components/Divider';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { Card } from '../components/Card';
 import '../css/Home.css';
 

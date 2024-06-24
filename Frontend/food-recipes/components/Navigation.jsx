@@ -2,8 +2,14 @@ import logo from '../assets/logo.jpg'
 import '../css/Navigation.css'
 import { SearchBar } from './SearchBar';
 import { Link } from "react-router-dom";
+import { useContext } from 'react';
+import RecipeContext from '../context/RecipeContext';
+
 
 export function Navigation() {
+
+    const { handleSearch } = useContext(RecipeContext);
+
     return (
         <div className='navbar'>
             <img src={logo} alt="logo" />
@@ -14,7 +20,7 @@ export function Navigation() {
                 <a href=""><i className="fa-brands fa-square-instagram "></i></a>
                 <a href=""><i className="fa-brands fa-youtube "></i></a>
                 <a href=""><i className="fa-brands fa-square-twitter"></i></a>
-                <SearchBar></SearchBar>
+                <SearchBar className='recipes-search-bar' handleSearch={handleSearch} />
             </div>
                 <div className='lower-div'>
                     <ul>
