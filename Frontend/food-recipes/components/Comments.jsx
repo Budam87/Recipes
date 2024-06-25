@@ -1,6 +1,7 @@
 import '../css/Comments.css';
 import { Button } from './Button';
 import { useState, useEffect } from 'react';
+import { Modal } from './Modal';
 
 export function Comments() {
     const [comment, setComment] = useState('');
@@ -8,6 +9,7 @@ export function Comments() {
     const [email, setEmail] = useState('');
     const [comments, setComments] = useState([]);
     const [error, setError] = useState(null);
+    const [selectedComment, setSelectedComment] = useState(null);
 
     const handleSubmit = async (e) => {
         e.preventDefault;
@@ -45,6 +47,23 @@ export function Comments() {
         }
     };
 
+    const handleDelete = async (id) => {
+        try {
+            const response = await fetch(`http://localhost:8080/comments/${id}`, {
+                method: 'DELETE'
+            });
+
+            if (response.ok) {
+                alert('Komentaras istrintas');
+                fetchComments();
+            } else {
+                alert('Nepavyko istrinti komentaro');
+            }
+        } catch (error) {
+            alert('Klaida: ' + error.message);
+        }
+    };
+
     useEffect(() => {
         fetchComments();
     }, []);
@@ -66,9 +85,20 @@ export function Comments() {
                     <div key={comment._id} className='comment'>
                         <p>{comment.name} <span> - {comment.createdAt}</span></p>
                         <p>{comment.comment}</p>
+                        <Button text='REMOVE' onClick={() => setSelectedComment(comment)}/>
                     </div>
                 ))}
             </div>
+            {selectedComment && (
+                <Modal
+                    comment={selectedComment} 
+                    onClose={() => setSelectedComment(null)} 
+                    onConfirm={(id) => { 
+                        handleDelete(id);
+                        setSelectedComment(null); 
+                    }}
+                />
+            )}
         </div>
     )
 }

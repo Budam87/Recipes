@@ -1,6 +1,7 @@
 import "../css/Footer.css";
 import subscribe from "../assets/subscribe.jpg";
 import { Button } from "./Button";
+import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
@@ -28,34 +29,34 @@ export function Footer() {
               <div className="nav-bar">
                 <h4>QUICK LINKS</h4>
                 <ul>
-                  <a href=""><li>ABOUT</li></a>
-                  <a href=""><li>HOME</li></a>
+                  <Link to="/about"><li>ABOUT</li></Link>
+                  <Link to="/"><li>HOME</li></Link>
+                </ul>
+              </div>
+              <div className="nav-bar">
+                <h4>BROWSE</h4>
+                <ul>
+                  <li><Link to="/recipes">RECIPES</Link></li>
+                  <li><Link to="/videos">VIDEOS</Link></li>
                 </ul>
               </div>
               <div className="nav-bar">
                 <h4>FOLLOW</h4>
                 <ul>
-                  <a href=""><li>RECIPES</li></a>
-                  <a href=""><li>VIDEOS</li></a>
-                </ul>
-              </div>
-              <div className="nav-bar">
-                <h4>FOLLOW</h4>
-                <ul>
-                  <a href=""><li>FACEBOOK</li></a>
-                  <a href=""><li>YOUTUBE</li></a>
-                  <a href=""><li>INSTAGRAM</li></a>
-                  <a href=""><li>TWITTER</li></a>
+                  <a href="https://www.facebook.com/"><li>FACEBOOK</li></a>
+                  <a href="https://www.youtube.com/watch?v=QGAJokcwBXI&t=176s"><li>YOUTUBE</li></a>
+                  <a href="https://www.instagram.com/"><li>INSTAGRAM</li></a>
+                  <a href="https://x.com/"><li>TWITTER</li></a>
                 </ul>
               </div>
             </div>
             <div className="all-rights">
                 <p>&copy; 2024 Foodie Buddah. All Rights Reserved.</p>
                 <ul>
-                    <a href=""><li>TOP</li></a>
-                    <a href=""><li>HOME</li></a>
-                    <a href=""><li>BROWSE RECIPES</li></a>
-                    <a href=""><li>VIDEOS</li></a>
+                    <a href="#top"><li>TOP</li></a>
+                    <Link to="/"><li>HOME</li></Link>
+                    <Link to="/recipes"><li>BROWSE RECIPES</li></Link>
+                    <Link to="/videos"><li>VIDEOS</li></Link>
                 </ul>
             </div>
           </div>

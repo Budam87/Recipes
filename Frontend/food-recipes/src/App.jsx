@@ -14,7 +14,7 @@ function App() {
   return (
             <RecipeProvider>
                 <main>
-                    <div>
+                    <div id="top">
                         <Navigation />
                         <Routes>
                             <Route path="/" element={<Home />} />

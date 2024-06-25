@@ -77,3 +77,19 @@ app.post('/comments', async (req, res) => {
     res.status(500).send('Posting failed');
   }
 })
+
+app.delete('/comments/:id', async (req, res) => {
+  try {
+    const collection = db.collection('Comments');
+    const result = await collection.deleteOne({ _id: new ObjectId(req.params.id) });
+    
+    if (result.deletedCount === 1) {
+      res.status(200).send({ message: 'Comment deleted successfully' });
+    } else {
+      res.status(404).send({ error: 'Comment not found' });
+    }
+  } catch (e) {
+    console.error(e);
+    res.status(500).send('Failed to delete comment');
+  }
+});

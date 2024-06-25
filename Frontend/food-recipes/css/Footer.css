@@ -4,6 +4,10 @@
     width: 100%;
 }
 
+.footer a:hover {
+    color: yellow;
+}
+
 .content-wrapper {
     display: flex;
     width: 80%;
