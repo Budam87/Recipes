@@ -8,8 +8,8 @@
 
 .upper-div {
     display: flex;
-    align-items: center;
     justify-content: flex-end; 
+    
 }
 
 .lower-div {
@@ -18,11 +18,11 @@
 }
 
 .right-block {
-    width: 70%;
+    width: 100%;
 }
 
 .navbar img {
-    width: 30%;
+    width: 40%;
 }
 
 .navbar li {
@@ -60,50 +60,78 @@ a {
     text-decoration: none;
 }
 
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-    }
+.search {
+    width: 50%;
+}
 
+.search input {
+    width: 100%;
+}
+
+.burger-img i{
+    display: none;
+    width: 40%;
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+   
+    .navbar img {
+        width: 70%;
+    }
     .upper-div {
         justify-content: space-between; 
         margin-bottom: 10px; 
     }
 
+   a {
+    font-size: 18px;
+   }
+
+    .upper-div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    i {
+        font-size: 28px;
+    }
+
+    .link-div {
+        margin-bottom: 20px;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .right-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .lower-div {
-        display: none; 
+        display: none;
     }
 
-    .burger-menu {
+    .burger-img {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .burger-img i {
         display: block;
-        text-align: right;
-        margin-right: 10px; 
     }
-
-    .burger-menu i {
-        font-size: 36px;
-        cursor: pointer;
-    }
-
-    .show {
-        display: block;
-        position: absolute;
-        top: 50px; 
-        right: 10px; 
-        background-color: white;
-        border: 1px solid #ccc;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        z-index: 100;
-        padding: 10px;
-    }
-
-    .show li {
-        display: block;
-        padding: 10px 0;
-    }
-}
-
-.search {
-    display: flex;
-    flex-direction: column;
+    
 }

@@ -8,6 +8,7 @@ import { Recipes } from '../pages/Recipes';
 import { About } from '../pages/About';
 import { Recipe } from '../pages/Recipe';
 import { RecipeProvider } from '../context/RecipeContext';
+import { EditRecipe } from '../components/RecipeEdit';
 
 function App() {
   
@@ -22,6 +23,7 @@ function App() {
                             <Route path="/recipes" element={<Recipes />} />
                             <Route path='/about' element={<About />} />
                             <Route path="/recipe/:id" element={<Recipe />} />
+                            <Route path="/recipes/edit/:id" element={<EditRecipe />} />
                         </Routes>
                         <Footer />
                     </div>

@@ -78,7 +78,7 @@ export function Comments() {
                 <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)}/>
                 <label htmlFor="email">Email*</label>
                 <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                <Button text="POST COMMENT" className="comments-btn" type='submit'/>
+                <Button text="POST" className="comments-btn" type='submit'/>
             </form>
             <div className='comments-list'>
                 {comments.map((comment) => (

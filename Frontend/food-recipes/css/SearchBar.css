@@ -10,14 +10,13 @@ input {
     width: 96%;
 }
 
-.search-bar {
-    width: 30%;
-}
+
 
 .search-bar {
     position: relative;
     display: inline-block;
 }
+
 
 .search-btn {
     position: absolute;
@@ -33,4 +32,10 @@ input {
 .search-btn:hover {
     color: gray;
     cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+
+
 }

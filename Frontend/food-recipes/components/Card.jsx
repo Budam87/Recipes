@@ -1,8 +1,15 @@
 import { Button } from "./Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import '../css/Card.css';
 
 export function Card({ photoUrl, title, text, id }) {
+
+    const navigate = useNavigate();
+
+    const handleEdit = () => {
+        navigate(`/recipes/edit/${id}`);
+    };
+
     return (
         <div className="card">
             <Link to={`/recipe/${id}`}>
@@ -15,6 +22,7 @@ export function Card({ photoUrl, title, text, id }) {
                     </div>
                 </div> 
             </Link>
+            <Button onClick={handleEdit}>Edit</Button>
         </div>
     )
 }

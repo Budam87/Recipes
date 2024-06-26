@@ -30,7 +30,10 @@ span {
     letter-spacing: 3px;
 }
 
-
-
-
+@media (max-width: 600px) {
+    .comments-btn {
+        width: 50%;
+       
+    }
+}
 

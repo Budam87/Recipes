@@ -1,7 +1,6 @@
 import { createContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
 const RecipeContext = createContext();
 
 export const RecipeProvider = ({ children }) => {
@@ -49,6 +48,31 @@ export const RecipeProvider = ({ children }) => {
         }
     };
 
+    const updateRecipe = async (id, updatedRecipe) => {
+        try {
+            const response = await fetch(`http://localhost:8080/recipes/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(updatedRecipe)
+            });
+            if (response.ok) {
+                const data = await response.json();
+                setRecipes(prevRecipes =>
+                    prevRecipes.map(recipe => (recipe._id === id ? { ...recipe, ...data.data } : recipe))
+                );
+                setFilteredRecipes(prevRecipes =>
+                    prevRecipes.map(recipe => (recipe._id === id ? { ...recipe, ...data.data } : recipe))
+                );
+            } else {
+                console.error(`Error: ${response.status} ${response.statusText}`);
+            }
+        } catch (error) {
+            console.error(`Error: ${error.message}`);
+        }
+    };
+
     const indexOfLastRecipe = currentPage * recipesPerPage;
     const indexOfFirstRecipe = indexOfLastRecipe - recipesPerPage;
     const currentRecipes = filteredRecipes.slice(indexOfFirstRecipe, indexOfLastRecipe);
@@ -66,7 +90,8 @@ export const RecipeProvider = ({ children }) => {
                 currentPage,
                 totalPages,
                 handleSearch,
-                handlePageChange
+                handlePageChange,
+                updateRecipe
             }}
         >
             {children}

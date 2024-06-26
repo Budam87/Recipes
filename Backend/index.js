@@ -93,3 +93,32 @@ app.delete('/comments/:id', async (req, res) => {
     res.status(500).send('Failed to delete comment');
   }
 });
+
+app.put('/recipes/:id', async (req, res) => {
+  try {
+    const collection = db.collection('Recipes');
+    const { id } = req.params;
+    const { title, ingredients } = req.body;
+
+    const updateData = {};
+    if (title) updateData.title = title;
+    if (ingredients) updateData.ingredients = ingredients;
+
+    console.log(`Updating recipe with ID: ${id}`);
+    console.log(`Update Data: ${JSON.stringify(updateData)}`);
+
+    const result = await collection.updateOne(
+      { _id: new ObjectId(id) },
+      { $set: updateData }
+    );
+
+    if (result.modifiedCount === 1) {
+      res.status(200).send({ message: 'Recipe updated successfully', data: updateData });
+    } else {
+      res.status(404).send({ error: 'Recipe not found' });
+    }
+  } catch (e) {
+    console.error(e);
+    res.status(500).send({ error: 'Failed to update recipe' });
+  }
+});

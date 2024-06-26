@@ -127,3 +127,46 @@
 .all-rights ul {
     padding: 0;
 }
+
+
+@media (max-width: 600px) {
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left-content {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .right-content {
+        width: 100%;
+    }
+
+    .nav-wrapper {
+        justify-content: center;
+    }
+
+    .all-rights {
+        padding-left: 0;
+    }
+
+    .sub-image {
+        max-width: 100%;
+    }
+
+    .subscribe {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .subscribe h3 {
+        padding-bottom: 20px;
+    }
+
+    .subscribe p {
+        padding-bottom: 20px;
+    }
+}

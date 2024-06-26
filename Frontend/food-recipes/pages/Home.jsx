@@ -55,7 +55,7 @@ export function Home() {
     return (
         <>
             <div>
-                    <Divider text='DINNER TONIGHT'/>
+                <Divider text='DINNER TONIGHT'/>
             </div>
             <div className='cards-wrapper'>
                 {randomMainCourseRecipes.map(recipe => (
